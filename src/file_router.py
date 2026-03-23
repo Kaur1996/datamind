@@ -19,5 +19,12 @@ def detect_file_type(path):
             raise ValueError('unknown file type, try again with csv or pdf file only')
     else:
         raise ValueError('Please input correct file path with file name .csv or .pdf extension')
+    
+def file_name(path):
 
+    file_name = Path(path).stem
+    if len(file_name) > 0:
+        return file_name
+    else:
+        raise ValueError('File name entered incorrectly. Please input a valid path with full file name')
 
